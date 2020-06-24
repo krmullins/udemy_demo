@@ -42,7 +42,7 @@
 
 
 $homeLinks[] = array(
-	'url' => 'http://localhost/demo/orders_view.php?SortField=&SortDirection=&FilterAnd%5B1%5D=and&FilterField%5B1%5D=7&FilterOperator%5B1%5D=is-empty&FilterValue%5B1%5D=', 
+	'url' => 'http://localhost/appgini_demo/orders_view.php?SortField=&SortDirection=&FilterAnd%5B1%5D=and&FilterField%5B1%5D=7&FilterOperator%5B1%5D=is-empty&FilterValue%5B1%5D=', 
 	'title' => 'UNSHIPED ORDERS', 
 	'description' => 'Show all orders that are not shipped.',
 	'groups' => array('*'), // groups allowed to see this link
