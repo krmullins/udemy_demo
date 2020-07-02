@@ -2,6 +2,10 @@
 	// For help on using hooks, please refer to http://bigprof.com/appgini/help/working-with-generated-web-database-application/hooks
 
 	function shippers_init(&$options, $memberInfo, &$args){
+		/* Inserted by Search Page Maker for AppGini on 2020-07-02 01:41:11 */
+		$options->FilterPage = 'hooks/shippers_filter.php';
+		/* End of Search Page Maker for AppGini code */
+
 
 		return TRUE;
 	}

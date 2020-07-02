@@ -40,11 +40,18 @@
 */
 /* 'http://localhost/demo/orders_view.php?SortField=&SortDirection=&FilterAnd%5B1%5D=and&FilterField%5B1%5D=7&FilterOperator%5B1%5D=is-empty&FilterValue%5B1%5D='*/
 
+$res =sql("SELECT * FROM membership_userrecords where tableName='orders' ORDER BY dateAdded DESC LIMIT 1", $eo);
+if($row= db_fetch_assoc($res)){
+	$last_order_id = $row['pkValue'];
+	$last_order_ts = $row['dateAdded'];
+	$last_order_date = date('j/n/Y', $last_order_ts);
+}
 
 $homeLinks[] = array(
 	'url' => 'http://localhost/appgini_demo/orders_view.php?SortField=&SortDirection=&FilterAnd%5B1%5D=and&FilterField%5B1%5D=7&FilterOperator%5B1%5D=is-empty&FilterValue%5B1%5D=', 
 	'title' => 'UNSHIPED ORDERS', 
-	'description' => 'Show all orders that are not shipped.',
+	'description' => 'Show all orders that are not shipped.<br><br>' .
+									'<a href="orders_view.php?SelectedID=' . urlencode($last_order_id) .'">Most recent order</a> was placed on ' . $last_order_date,
 	'groups' => array('*'), // groups allowed to see this link
 	'grid_column_classes' => 'col-sm-8 col-md-8 col-lg-6',
 	'panel_classes' => 'panel-primary',
