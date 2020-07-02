@@ -113,6 +113,12 @@
 			'Phone' => array('appgini' => 'VARCHAR(24) null '),
 			'NumOrders' => array('appgini' => 'INT null '),
 		),
+		'logs' => array(
+			'id' => array('appgini' => 'INT unsigned not null primary key auto_increment '),
+			'ip' => array('appgini' => 'VARCHAR(40) null '),
+			'ts' => array('appgini' => 'BIGINT null '),
+			'details' => array('appgini' => 'TEXT null '),
+		),
 	);
 
 	$table_captions = getTableList();

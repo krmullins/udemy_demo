@@ -52,7 +52,8 @@
 			'products' => array('Products', 'In addition to to accessing product details, you can also access the orders history of each <br>product from here.', 'resources/table_icons/handbag.png', 'Catalog'),
 			'categories' => array('Product Categories', 'Product categories include photos that have been automatically resized using the <br>thumbnails feature provided by AppGini.<br> Click on a thumbnail to enlarge it. Signed users can upload photos when defining new categories.', 'resources/table_icons/award_star_bronze_1.png', 'Catalog'),
 			'suppliers' => array('Suppliers', 'In addition to to accessing suppliers\' details, you can also view products <br>provided by each supplier.', 'resources/table_icons/car.png', 'Operations'),
-			'shippers' => array('Shippers', 'Here you can access shippers info, and also see orders handled by each shipper.', 'resources/table_icons/cart.png', 'Operations')
+			'shippers' => array('Shippers', 'Here you can access shippers info, and also see orders handled by each shipper.', 'resources/table_icons/cart.png', 'Operations'),
+			'logs' => array('Logs', '', 'table.gif', 'Sales')
 		);
 		if($skip_authentication || getLoggedAdmin()) return $arrTables;
 
@@ -147,6 +148,7 @@
 			'categories' => "`categories`.`CategoryID` as 'CategoryID', `categories`.`Picture` as 'Picture', `categories`.`CategoryName` as 'CategoryName', `categories`.`Description` as 'Description'",
 			'suppliers' => "`suppliers`.`SupplierID` as 'SupplierID', `suppliers`.`CompanyName` as 'CompanyName', `suppliers`.`ContactName` as 'ContactName', `suppliers`.`ContactTitle` as 'ContactTitle', `suppliers`.`Address` as 'Address', `suppliers`.`City` as 'City', `suppliers`.`Region` as 'Region', `suppliers`.`PostalCode` as 'PostalCode', `suppliers`.`Country` as 'Country', `suppliers`.`Phone` as 'Phone', `suppliers`.`Fax` as 'Fax', `suppliers`.`HomePage` as 'HomePage'",
 			'shippers' => "`shippers`.`ShipperID` as 'ShipperID', `shippers`.`CompanyName` as 'CompanyName', `shippers`.`Phone` as 'Phone', `shippers`.`NumOrders` as 'NumOrders'",
+			'logs' => "`logs`.`id` as 'id', `logs`.`ip` as 'ip', `logs`.`ts` as 'ts', `logs`.`details` as 'details'",
 		);
 
 		if(isset($sql_fields[$table_name])) {
@@ -168,6 +170,7 @@
 			'categories' => "`categories` ",
 			'suppliers' => "`suppliers` ",
 			'shippers' => "`shippers` ",
+			'logs' => "`logs` ",
 		);
 
 		$pkey = array(
@@ -179,6 +182,7 @@
 			'categories' => 'CategoryID',
 			'suppliers' => 'SupplierID',
 			'shippers' => 'ShipperID',
+			'logs' => 'id',
 		);
 
 		if(!isset($sql_from[$table_name])) return false;
@@ -329,6 +333,12 @@
 				'CompanyName' => '',
 				'Phone' => '',
 				'NumOrders' => ''
+			),
+			'logs' => array(
+				'id' => '',
+				'ip' => '',
+				'ts' => '',
+				'details' => ''
 			)
 		);
 

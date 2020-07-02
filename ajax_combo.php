@@ -236,6 +236,8 @@
 		),
 		'shippers' => array(
 		),
+		'logs' => array(
+		),
 	);
 
 	// XSS prevention

@@ -147,6 +147,13 @@
 					'group' => $tg[1],
 					'homepageShowCount' => 1
 				),
+				'logs' => array(
+					'Caption' => 'Logs',
+					'Description' => '',
+					'tableIcon' => 'table.gif',
+					'group' => $tg[0],
+					'homepageShowCount' => 0
+				),
 		);
 
 		if($skip_authentication || getLoggedAdmin()) return $all_tables;
@@ -170,6 +177,7 @@
 				'categories' => 'Product Categories',
 				'suppliers' => 'Suppliers',
 				'shippers' => 'Shippers',
+				'logs' => 'Logs',
 			);
 
 			return $arrTables;
@@ -2033,6 +2041,8 @@ WHERE `order_details`.`odID`=\'%ID%\'',
 				'NumOrders' => 'SELECT COUNT(1) FROM `shippers` 
 LEFT JOIN `orders` ON `orders`.`ShipVia`=`shippers`.`ShipperID` 
 WHERE `shippers`.`ShipperID`=\'%ID%\'',
+			),
+			'logs' => array(
 			),
 		);
 	}

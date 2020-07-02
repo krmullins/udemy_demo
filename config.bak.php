@@ -3,13 +3,13 @@
 	$dbUsername = 'root';
 	$dbPassword = '';
 	$dbDatabase = 'demo';
-	$appURI = 'appgini_demo';
+	$appURI = 'demo';
 	$host = 'localhost';
 
 	$adminConfig = array(
 		'adminUsername' => "krmullins",
 		'adminPassword' => "\$2y\$10\$ywBL3G3.uwOIk7UOn1o/oORbqtanKhNcbrRMZf4KWDJr7t.fkmC7K",
-		'notifyAdminNewMembers' => "0",
+		'notifyAdminNewMembers' => "",
 		'defaultSignUp' => "1",
 		'anonymousGroup' => "anonymous",
 		'anonymousMember' => "guest",
@@ -26,7 +26,7 @@
 		'senderName' => "Membership management",
 		'senderEmail' => "kev@mullinsmail.com",
 		'approvalSubject' => "Your membership is now approved",
-		'approvalMessage' => "Dear member,\r\n\r\nYour membership is now approved by the admin. You can log in to your account here:\r\nhttp://localhost/demo\r\n\r\nRegards,\r\nAdmin",
+		'approvalMessage' => "Dear member,\n\nYour membership is now approved by the admin. You can log in to your account here:\nhttp://localhost/demo\n\nRegards,\nAdmin",
 		'hide_twitter_feed' => "",
 		'maintenance_mode_message' => "<b>Our website is currently down for maintenance</b><br>\r\nWe expect to be back in a couple hours. Thanks for your patience.",
 		'mail_function' => "mail",
