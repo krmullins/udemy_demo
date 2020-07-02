@@ -45,6 +45,7 @@ if($row= db_fetch_assoc($res)){
 	$last_order_id = $row['pkValue'];
 	$last_order_ts = $row['dateAdded'];
 	$last_order_date = date('j/n/Y', $last_order_ts);
+	
 }
 
 $homeLinks[] = array(
